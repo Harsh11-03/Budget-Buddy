@@ -21,18 +21,28 @@ const App = () => {
       <Box className={classes.expenseLimitContainer}>
         <ExpenseLimit />
       </Box>
-      <Grid className={classes.grid} container spacing={0} alignItems="center" justify="center" style={{ height: 'calc(100vh - 100px)'}}>
-        <Grid item xs={12} sm={4} className={classes.mobile}>
-          <Details title="Income" />
+      <Grid
+        className={classes.grid}
+        container
+        spacing={3}
+        alignItems="stretch"
+        justifyContent="center"
+      >
+        {/* Horizontal layout: Income | Add Transaction | Expense */}
+
+        {/* Income card - first position */}
+        <Grid item xs={12} sm={4} md={4} lg={4} className={classes.card}>
+          <Details title="Income" subheader="Track your income sources" />
         </Grid>
-        <Grid ref={main} item xs={12} sm={3} className={classes.main}>
+
+        {/* Main tracker - middle position */}
+        <Grid ref={main} item xs={12} sm={4} md={4} lg={4} className={classes.main}>
           <Main />
         </Grid>
-        <Grid item xs={12} sm={4} className={classes.desktop}>
-          <Details title="Income" />
-        </Grid>
-        <Grid item xs={12} sm={4} className={classes.last}>
-          <Details title="Expense" />
+
+        {/* Expense card - last position */}
+        <Grid item xs={12} sm={4} md={4} lg={4} className={classes.card}>
+          <Details title="Expense" subheader="Track your expenses" />
         </Grid>
       </Grid>
     </div>

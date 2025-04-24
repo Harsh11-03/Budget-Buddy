@@ -1,30 +1,37 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-  desktop: {
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
+  card: {
+    display: 'flex',
+    height: '100%',
+    '& > *': {
+      width: '100%',
+      height: '100%',
     },
-  },
-  mobile: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(2),
     },
   },
   main: {
-    [theme.breakpoints.up('sm')]: {
-      paddingBottom: '5%',
+    display: 'flex',
+    height: '100%',
+    '& > *': {
+      width: '100%',
+      height: '100%',
     },
-  },
-  last: {
-    [theme.breakpoints.down('sm')]: {
-      marginBottom: theme.spacing(3),
-      paddingBottom: '200px',
+    [theme.breakpoints.down('xs')]: {
+      order: 2, // On mobile, Main appears in the middle
+      marginBottom: theme.spacing(2),
     },
   },
   grid: {
-    '& > *': {
-      margin: theme.spacing(2),
+    width: '100%',
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: theme.spacing(2),
+    minHeight: 'calc(100vh - 150px)',
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(1),
     },
   },
   expenseLimitContainer: {
@@ -33,5 +40,11 @@ export default makeStyles((theme) => ({
     maxWidth: '1200px',
     margin: '0 auto',
     marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(1),
+      marginTop: theme.spacing(1),
+      marginBottom: theme.spacing(1),
+    },
   },
 }));

@@ -145,7 +145,7 @@ const ExpenseLimit = () => {
         <Box className={classes.limitContainer}>
           <Box className={classes.progressInfo}>
             <Typography variant="body2">
-              Monthly Expense Limit: ${user.expenseLimit}
+              Monthly Expense Limit: ₹{user.expenseLimit}
             </Typography>
             <Typography
               variant="body2"
@@ -153,7 +153,7 @@ const ExpenseLimit = () => {
                 color: percentage >= 80 ? '#f44336' : percentage >= 50 ? '#ff9800' : '#4caf50'
               }}
             >
-              Used: ${currentExpenses} ({percentage.toFixed(1)}%)
+              Used: ₹{currentExpenses} ({percentage.toFixed(1)}%)
             </Typography>
           </Box>
           <LinearProgress
@@ -170,7 +170,7 @@ const ExpenseLimit = () => {
           <TextField
             autoFocus
             margin="dense"
-            label="Expense Limit ($)"
+            label="Expense Limit (₹)"
             type="number"
             fullWidth
             value={limit}
